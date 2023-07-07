@@ -1,0 +1,35 @@
+{
+  "name": "nvr-app",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "tauri": "tauri",
+    "f2elint-scan": "f2elint scan",
+    "f2elint-fix": "f2elint fix"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "^1.4.0",
+    "@vue/composition-api": "^1.7.1",
+    "vue": "^2.7.14"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^1.4.0",
+    "@vitejs/plugin-vue": "^4.0.0",
+    "f2elint": "^2.2.1",
+    "sass": "^1.63.6",
+    "unplugin-vue2-script-setup": "^0.11.4",
+    "vite": "^4.2.1",
+    "vite-plugin-vue2": "^2.0.3",
+    "vue-template-compiler": "^2.7.14"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "f2elint commit-file-scan",
+      "commit-msg": "f2elint commit-msg-scan"
+    }
+  }
+}
