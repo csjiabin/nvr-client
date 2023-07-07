@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h1>Welcome to NVR!</h1>
+    <h1>Welcome to 大华 NVR!</h1>
     <form class="form">
       <div>
         <label for="username">用户名</label>
