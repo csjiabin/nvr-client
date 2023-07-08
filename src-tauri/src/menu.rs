@@ -17,14 +17,16 @@ pub fn init(context: &Context<EmbeddedAssets>) -> Menu {
             .add_native_item(MenuItem::Quit),
     );
     // 编辑菜单（自定义菜单）
-    let edit_menu = Submenu::new(
-        "Edit",
+    let file_menu = Submenu::new(
+        "File",
         Menu::new()
-            .add_item(CustomMenuItem::new("undo".to_string(), "Undo"))
-            .add_item(CustomMenuItem::new("redo".to_string(), "Redo")),
+            .add_native_item(MenuItem::About(name.into(), AboutMetadata::new()))
+            .add_item(CustomMenuItem::new("debug".to_string(), "Debug"))
+            .add_native_item(MenuItem::Hide)
+            .add_native_item(MenuItem::Quit),
     );
 
-    Menu::new().add_submenu(app_menu).add_submenu(edit_menu)
+    Menu::new().add_submenu(app_menu).add_submenu(file_menu)
 }
 
 // 应用菜单处理事件
