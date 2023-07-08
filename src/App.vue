@@ -39,6 +39,8 @@
   </div>
 </template>
 <script>
+// import VConsole from 'vconsole';
+
 import DahuaVideo from "./components/DahuaVideo.vue";
 
 export default {
@@ -47,6 +49,7 @@ export default {
   },
   data() {
     return {
+      // vConsole: new VConsole(),
       options: {
         ip: "172.30.1.234",
         port: 18554,

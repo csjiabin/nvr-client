@@ -33,7 +33,6 @@ fn main() {
                 println!("Initializing...");
                 std::thread::sleep(std::time::Duration::from_secs(2));
                 println!("Done initializing.");
-
                 // After it's done, close the splashscreen and display the main window
                 splashscreen_window.close().unwrap();
                 main_window.show().unwrap();

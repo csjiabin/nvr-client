@@ -30,13 +30,15 @@ pub fn init(context: &Context<EmbeddedAssets>) -> Menu {
 // 应用菜单处理事件
 pub fn handler(event: WindowMenuEvent) {
     // 菜单所属的窗口
-    let win = Some(event.window());
+    let _win = Some(event.window());
 
     // 匹配菜单 id
     match event.menu_item_id() {
         "debug" => {
-            dbg!("debug");
-            win.unwrap().open_devtools();
+            #[cfg(debug_assertions)]
+            {
+                _win.unwrap().open_devtools();
+            }
         }
         _ => {}
     }

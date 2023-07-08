@@ -1,7 +1,7 @@
+import path from "path";
 import { defineConfig } from "vite";
 import { createVuePlugin } from "vite-plugin-vue2";
 import setUp from "unplugin-vue2-script-setup/vite";
-import path from "path";
 const resolve = (str) => {
   return path.resolve(__dirname, str);
 };
@@ -20,6 +20,10 @@ export default defineConfig(async () => ({
   server: {
     port: 1420,
     strictPort: true,
+    headers: {
+      'Cross-Origin-Embedder-Policy': 'require-corp',
+      'Cross-Origin-Opener-Policy': 'same-origin',
+    }
   },
   // to make use of `TAURI_DEBUG` and other env variables
   // https://tauri.studio/v1/api/config#buildconfig.beforedevcommand

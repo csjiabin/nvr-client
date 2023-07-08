@@ -7,12 +7,14 @@
     "build": "vite build",
     "preview": "vite preview",
     "tauri": "tauri",
+    "rsw": "rsw",
     "f2elint-scan": "f2elint scan",
     "f2elint-fix": "f2elint fix"
   },
   "dependencies": {
     "@tauri-apps/api": "^1.4.0",
     "@vue/composition-api": "^1.7.1",
+    "vconsole": "^3.15.1",
     "vue": "^2.7.14"
   },
   "devDependencies": {
@@ -22,6 +24,7 @@
     "sass": "^1.63.6",
     "unplugin-vue2-script-setup": "^0.11.4",
     "vite": "^4.2.1",
+    "vite-plugin-rsw": "^2.0.11",
     "vite-plugin-vue2": "^2.0.3",
     "vue-template-compiler": "^2.7.14"
   },
