@@ -8,3 +8,4 @@ node_modules/
 **/*-min.js
 **/*.bundle.js
 public/
+plugin/tauri-plugin-websocket/

@@ -43,18 +43,18 @@
       {
         "fullscreen": false,
         "resizable": true,
-        "title": "nvr-app",
+        "title": "nvr-client",
         "width": 800,
         "height": 600,
         "visible": false
       },
       {
-      "width": 800,
-      "height": 600,
-      "decorations": false,
-      "url": "splashscreen.html",
-      "label": "splashscreen"
-    }
+        "width": 800,
+        "height": 600,
+        "decorations": false,
+        "url": "splashscreen.html",
+        "label": "splashscreen"
+      }
     ]
   }
 }

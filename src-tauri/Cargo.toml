@@ -1,10 +1,10 @@
 [package]
 authors = ["huangjb"]
-description = "A Tauri App"
+description = "A NVR Client"
 edition = "2021"
-license = ""
-name = "nvr-app"
-repository = ""
+license = "MIT"
+name = "nvr-client"
+repository = "https://github.com/csjiabin/nvr-client.git"
 version = "0.0.1"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
@@ -16,6 +16,7 @@ tauri-build = {version = "1.4", features = [] }
 serde = {version = "1.0", features = ["derive"] }
 serde_json = "1.0"
 tauri = {version = "1.4", features = ["shell-open", "windows7-compat", "devtools"] }
+# tauri-plugin-websocket = {path = "../plugin/tauri-plugin-websocket"}
 
 [features]
 # this feature is used for production builds or when `devPath` points to the filesystem

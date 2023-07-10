@@ -1,24 +1,20 @@
 <template>
   <div class="video-box">
     <video v-show="decodeMode === 'video'" ref="videoRef" class="video"></video>
-    <canvas
-      v-show="decodeMode !== 'video'"
-      ref="canvasRef"
-      class="canvas"
-    ></canvas>
+    <canvas v-show="decodeMode !== 'video'" ref="canvasRef" class="canvas"></canvas>
   </div>
 </template>
 <script>
 const DEFAULT_OPTIONS = {
   /** 用户名，因为 rtsp 拉流需要鉴权，因此需要用户名和密码。 */
-  username: "",
+  username: '',
   /** 密码 */
-  password: "",
-  channel: "",
+  password: '',
+  channel: '',
   /** 代表码流类型（0：主码流，1：辅码流 1，2：辅码流 2） */
-  subtype: "",
-  ip: "",
-  port: "",
+  subtype: '',
+  ip: '',
+  port: '',
 };
 
 export default {
@@ -30,7 +26,7 @@ export default {
   },
   data() {
     return {
-      decodeMode: "video",
+      decodeMode: 'video',
       player: null,
       canvasSon: null,
     };
@@ -43,9 +39,8 @@ export default {
       this.initPlayer();
     },
     handleLogin() {
-      const { options } = this;
+      // const { options } = this;
       // RPC.login(options.username, options.password, false).then((res) => {
-
       // })
     },
     initPlayer() {
@@ -63,16 +58,16 @@ export default {
       };
       const player = new PlayerControl(playerOptions);
 
-      player.on("WorkerReady", () => {
+      player.on('WorkerReady', () => {
         player.connect();
       });
-      player.on("MSEResolutionChanged", (e) => {
+      player.on('MSEResolutionChanged', (e) => {
         console.log(e);
       });
-      player.on("PlayStart", (e) => {
+      player.on('PlayStart', (e) => {
         console.log(e);
       });
-      player.on("DecodeStart", (e) => {
+      player.on('DecodeStart', (e) => {
         console.log(e);
         this.decodeMode = e.decodeMode;
         this.canvasSon = new PluginCanvasES6();
@@ -82,13 +77,13 @@ export default {
         // });
         // this.canvasSon.addChangeShapeEvent();
       });
-      player.on("GetFrameRate", (e) => {
+      player.on('GetFrameRate', (e) => {
         console.log(`GetFrameRate: ${e}`);
       });
-      player.on("FrameTypeChange", (e) => {
+      player.on('FrameTypeChange', (e) => {
         console.log(`FrameTypeChange: ${e}`);
       });
-      player.on("Error", (e) => {
+      player.on('Error', (e) => {
         console.log(`Error:`, e);
       });
       player.init(this.$refs.canvasRef, this.$refs.videoRef); // 初始化播放器
